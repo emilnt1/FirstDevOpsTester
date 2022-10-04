@@ -1,6 +1,7 @@
 import './App.css';
 import {Routes, Route} from "react-router-dom";
 import {AppBar, Toolbar, Typography} from "@mui/material";
+import {giraffeStore} from "./stores/GiraffeStore";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
         <Routes>
             <Route path="/" element={<Home/>}/>
             <Route path="/about" element={<About/>}/>
+            <Route path="/giraffe" element={<Giraffes/>}/>
         </Routes>
     </div>
   );
@@ -26,6 +28,16 @@ function App() {
         </div>
  }
 
+const Giraffes= () => {
+    return <div>
+        <Typography>Girafliste</Typography>
+        <ul>
+            {giraffeStore.giraffes.map((giraffeName,key)=>
+                <li key={key}>{giraffeName}</li>
+            )}
+        </ul>
+    </div>
+}
  const Header = () => {
      return (
          <AppBar position="static">
