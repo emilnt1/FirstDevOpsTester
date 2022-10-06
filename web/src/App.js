@@ -7,6 +7,7 @@ function App() {
   return (
     <div>
         <Header/>
+        <div><Typography>This is a tester</Typography></div>
         <Routes>
             <Route path="/" element={<Home/>}/>
             <Route path="/about" element={<About/>}/>
